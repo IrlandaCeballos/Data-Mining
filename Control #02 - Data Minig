@@ -1,0 +1,95 @@
+#CONTROL N°02 - MINERÍA DE DATOS
+#Ejercicio #01
+f1 <- function(datos, elemento){
+  as.list(datos);
+  for(i in 1:length(datos)) {
+    if(datos[i] == elemento){
+      datos[i] = NA;
+    }
+  }
+  return(datos);
+}
+
+f1(seq(1,10), 8); 
+
+
+
+#Ejercicio #02
+f2 <- function(vector, entero){
+  estaEnVector = FALSE;
+  for(i in 1:length(vector)) {
+    if(vector[i] == entero){
+      estaEnVector = TRUE;
+    }
+  }
+  return(estaEnVector)
+}
+
+f2(1:4, 5);
+
+
+
+#Ejercicio #03
+funcionCuadratica <- function(a, b, c){
+  if (a!= 0)
+  {
+    discriminante <- b^2 - 4*a*c;
+    solucion1 <- (-b + sqrt(discriminante))/(2*a);
+    solucion2 <- (-b - sqrt(discriminante))/(2*a);
+    solucion <- c(solucion1, solucion2);
+    return(solucion)
+  }
+  else {return("Los parámetros especificados no son de Función Cuadrática")}
+}
+
+funcionCuadratica(-1,4, -3);
+
+
+
+#Ejercicio #04
+f4 <- function(vector, entero){ 
+  contador <- 0;
+  for(i in 1:length(vector)) {
+    if(vector[i] == entero){
+      contador = contador + 1;
+    }
+  }
+  return(contador)
+  };
+
+xVector <- rep(5,10);
+entero <- 5;
+prueba1 <- f4(xVector, entero);
+print(prueba1);
+
+
+
+#Ejercicio #05
+f5 <- function(vector){
+  media <- mean(vector);
+  desviacion <- sd(vector);
+  print("Media: ") 
+  print(media)
+  print("Desviación estándar: ")
+  print(desviacion)
+}
+
+yVector <- rep(5,10);
+prueba2 <- f5(yVector)
+
+
+
+#Ejercicio #06
+f6 <- function(elemento){
+  contador <- 0
+    
+  for(i in 1:elemento){
+    if(elemento%%i == 0){
+      contador = contador +1;
+    } 
+  }
+  contador = contador - 2
+  return(contador)
+}
+
+f6(10)
